@@ -14,10 +14,11 @@ extension String {
     }
     
     func substring(_ from: Int) -> String {
-        return self.substring(from: self.characters.index(self.startIndex, offsetBy: from))
+        // return self.substring(from: self.characters.index(self.startIndex, offsetBy: from))
+        return String(self[index(self.startIndex, offsetBy: from)..<self.endIndex])
     }
     
     var length: Int {
-        return self.characters.count
+        return self.count
     }
 }

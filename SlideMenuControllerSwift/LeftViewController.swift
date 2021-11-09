@@ -15,7 +15,7 @@ enum LeftMenu: Int {
     case nonMenu
 }
 
-protocol LeftMenuProtocol : class {
+protocol LeftMenuProtocol : AnyObject {
     func changeViewController(_ menu: LeftMenu)
 }
 
@@ -120,7 +120,7 @@ extension LeftViewController : UITableViewDataSource {
         if let menu = LeftMenu(rawValue: indexPath.row) {
             switch menu {
             case .main, .swift, .java, .go, .nonMenu:
-                let cell = BaseTableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: BaseTableViewCell.identifier)
+                let cell = BaseTableViewCell(style: UITableViewCell.CellStyle.subtitle, reuseIdentifier: BaseTableViewCell.identifier)
                 cell.setData(menus[indexPath.row])
                 return cell
             }
